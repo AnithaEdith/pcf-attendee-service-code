@@ -5,6 +5,7 @@ set -e +x
 pushd attendee-service-source
   echo "Packaging JAR"
   ./mvnw clean package -DskipTests
+  
 popd
 
 jar_count=`find attendee-service-source/target -type f -name *.jar | wc -l`
