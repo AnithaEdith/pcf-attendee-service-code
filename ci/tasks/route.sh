@@ -1,6 +1,8 @@
 #!/bin/bash
 
 set -ex
+apt-get update && apt-get install cf-cli
+
 
 if [ -z $ATTENDEE_SERVICE_URL_NEW ]; then
   echo "ATTENDEE_SERVICE_URL_NEW not set"
