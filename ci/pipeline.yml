@@ -39,3 +39,14 @@ jobs:
     file: attendee-service-source/ci/tasks/smoke-test.yml
     params:
       ATTENDEE_SERVICE_URL:  https://attendee-service-blue-chiropodical-accompaniment
+
+- name: route
+  public: true
+  plan:
+  - get: attendee-service-source
+    trigger: true
+    passed: [smoke_test]
+  - task: route
+    file: attendee-service-source/ci/tasks/route.yml
+    params:
+      ATTENDEE_SERVICE_URL_NEW:  https://attendee-service-goofy-intelligibleness.apps.cumuluslabs.io
