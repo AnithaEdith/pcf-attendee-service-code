@@ -1,5 +1,5 @@
 applications:
-- name: attendee
+- name: attendee-service-blue
   path: target/attendee-1.0.jar
   random-route: true
   host: attendee-service-blue-chiropodical-accompaniment
