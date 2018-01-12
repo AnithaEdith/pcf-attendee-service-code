@@ -28,3 +28,14 @@ jobs:
     params:
       manifest: attendee-service-source/manifest.yml
       path: package-output/attendee-service.jar
+
+- name: smoke_test
+  public: true
+  plan:
+  - get: attendee-service-source
+    trigger: true
+    passed: [deploy]
+  - task: smoke_test
+    file: attendee-service-source/ci/tasks/smoke-test.yml
+    params:
+      ATTENDEE_SERVICE_URL:  https://attendee-service-blue-chiropodical-accompaniment
