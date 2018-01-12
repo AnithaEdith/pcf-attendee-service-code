@@ -26,6 +26,7 @@ public class AttendeeServiceApplicationTest {
   @Autowired
   private TestRestTemplate restTemplate;
 
+
   @LocalServerPort
   private int port;
 
